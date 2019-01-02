@@ -13,10 +13,3 @@ def prayer(func):
         return Prayer(func, *args, **kwargs)
     return pray
 
-@prayer
-def pray(*args, **kwargs):
-    print(*args, **kwargs)
-
-
-if __name__ == '__main__':
-    pray('please Lord!', 'Give me mone... khm, peaceful sleep.').please()

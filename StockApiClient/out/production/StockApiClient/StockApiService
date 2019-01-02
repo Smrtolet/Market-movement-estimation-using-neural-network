@@ -1,0 +1,8 @@
+from . import Prayer
+@prayer
+def pray(*args, **kwargs):
+    print(*args, **kwargs)
+
+if __name__ == '__main__':
+    pray('lol').please()
+    pass
