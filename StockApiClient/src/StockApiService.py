@@ -1,5 +1,5 @@
 from datetime import datetime
-from iexfinance.stocks import get_historical_data
+from iexfinance.stocks import get_historical_data, get_historical_intraday, get_todays_earnings
 
 
 
@@ -8,5 +8,8 @@ if __name__ == '__main__':
     end = datetime(2018, 1, 1)
 
     df = get_historical_data("TSLA", start, end)
-    for key in sorted(df.keys()):
-        print(key,": ", df[key])
+    n = get_historical_intraday("TSLA", output_format='pandas')
+    print(get_todays_earnings())
+    #print(n)
+    #for key in sorted(df.keys()):
+     #   print(key,": ", df[key])
