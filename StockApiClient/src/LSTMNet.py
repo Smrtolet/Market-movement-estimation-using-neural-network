@@ -1,8 +1,20 @@
+from datetime import datetime
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from iexfinance.stocks import get_historical_data
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import LSTM
+from keras.layers import Dropout
 
-dataset_train = pd.read_csv('NSE-TATAGLOBAL.csv')
+#definiraj vremenski raspon (godina, mjesec, dan)
+start = datetime(2017, 1, 1)
+end = datetime(2018, 1, 1)
+
+dataset_train = get_historical_data("TSLA", start, end, output_format='pandas')
+
 #dohvati drugi stupac
 training_set = dataset_train.iloc[:, 1:2].values
 dataset_train.head()
@@ -14,21 +26,13 @@ training_set_scaled = sc.fit_transform(training_set)
 #kreiraj matrice ulaznih i izlaznih vrijednosti
 X_train = []
 y_train = []
-for i in range(60, 2035):
+for i in range(60, training_set_scaled.shape[0]):
     X_train.append(training_set_scaled[i-60:i, 0])
     y_train.append(training_set_scaled[i, 0])
 X_train, y_train = np.array(X_train), np.array(y_train)
 
 # dodaje novu dimenziju matrici
 X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
-
-
-
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from keras.layers import Dropout
-
 
 
 
@@ -53,7 +57,11 @@ regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
 
 regressor.fit(X_train, y_train, epochs = 100, batch_size = 32)
 
-
+######################
+#                    #
+#    Do tude radi!   #
+#                    #
+######################
 
 
 dataset_test = pd.read_csv('tatatest.csv')
