@@ -20,8 +20,8 @@
       <file leaf-file-name="LSTMNet.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LSTMNet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="216">
+              <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -228,12 +228,12 @@
       <workItem from="1547296025017" duration="13000" />
       <workItem from="1547909068128" duration="14644000" />
       <workItem from="1548070683946" duration="605000" />
-      <workItem from="1548107258150" duration="2406000" />
+      <workItem from="1548107258150" duration="3076000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39121000" />
+    <option name="totallyTimeSpent" value="39791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
@@ -246,10 +246,10 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" visible="true" weight="0.3398693" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924242" weight="0.3267974" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.3398693" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49924242" visible="true" weight="0.3267974" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28333333" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28333333" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="SciView" order="7" weight="0.72424245" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -462,8 +462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LSTMNet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="216">
+          <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>

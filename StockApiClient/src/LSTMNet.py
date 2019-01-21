@@ -100,7 +100,8 @@ for i in range(hidden_layer_neurons[0], hidden_layer_neurons[1]):
         with open("{}Layers_{}Neurons_model.json".format(j, i), "w") as json_file:
             json_file.write(model_json)
         # serialize weights to HDF5
-        regressor.save_weights("model.h5")
+        regressor.save_weights("{}Layers_{}Neurons_model.h5".format(j, i))
+        print(i, j);
 
 
 # to load model
