@@ -7,7 +7,9 @@ from iexfinance.stocks import get_historical_data
 
 start = datetime(2015, 1, 1)
 end = datetime(2019,1,1)
-dataset_A = get_historical_data("AAPL", start, end, output_format='pandas')
+
+StockShortname ="NFLX"
+dataset_A = get_historical_data(StockShortname, start, end, output_format='pandas')
 trainset = dataset_A.iloc[:,3:].values
 
 incrementSet = trainset.copy()[:,0]
@@ -88,11 +90,11 @@ real_stock_price = trainset.copy()[806:,0:1]
 
 # Visualising the results
 plt.figure(figsize=(20,15))
-plt.plot(real_stock_price, color = 'red', label = 'Real AAPL Stock Price')
-plt.plot(predicted_stock_price, color = 'blue', label = 'Predicted AAPL Stock Price')
-plt.title('AAPL Stock Price Prediction')
+plt.plot(real_stock_price, color = 'red', label = 'Real '+ StockShortname +' Stock Price')
+plt.plot(predicted_stock_price, color = 'blue', label = 'Predicted '+StockShortname+' Stock Price')
+plt.title(''+StockShortname+' Stock Price Prediction')
 plt.xlabel('Days')
-plt.ylabel('AAPL Stock Price')
+plt.ylabel(''+StockShortname+' Stock Price')
 plt.legend()
 plt.show()
 
