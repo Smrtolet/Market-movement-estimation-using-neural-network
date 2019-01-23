@@ -8,7 +8,7 @@ from iexfinance.stocks import get_historical_data
 start = datetime(2015, 1, 1)
 end = datetime(2019,1,1)
 
-StockShortname ="AAPL"
+StockShortname ="MSFT"
 dataset_A = get_historical_data(StockShortname, start, end, output_format='pandas')
 trainset = dataset_A.iloc[:,3:].values
 
