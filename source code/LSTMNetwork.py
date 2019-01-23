@@ -131,10 +131,10 @@ for i in range(199):
                         print("closing position")
                         profit+=starting_position-current_price
                         buy_sell=0
-if (buy_sell==1):
-    profit+=current_price-starting_position
-if (buy_sell==1):   
-    profit+=starting_position-current_price
+#if (buy_sell==1):
+#    profit+=current_price-starting_position
+#if (buy_sell==-1):   
+#    profit+=starting_position-current_price
 
 print("profit from our prediction is: " +str(profit/starting_position),"%")
 
