@@ -34,7 +34,7 @@ y_test = []
 for i in range(60, 806):
     X_train.append(training_set_scaled[i-60:i])
     y_train.append(training_set_scaled[i][0])
-for i in range(806, 1006):
+for i in range(866, 1006):
     X_test.append(training_set_scaled[i-60:i])
     y_test.append(training_set_scaled[i][0])
 X_train, y_train = np.array(X_train), np.array(y_train)
@@ -78,7 +78,7 @@ regressor.add(Dense(units = 1))
 
 #training
 regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
-regressor.fit(X_train, y_train, epochs = 20, batch_size = 30)
+regressor.fit(X_train, y_train, epochs = 15, batch_size = 30)
 
 predicted_stock_price = regressor.predict(X_test)
 predicted_stock_price = bc.inverse_transform(predicted_stock_price)
@@ -88,15 +88,15 @@ predicted_stock_price = bc.inverse_transform(predicted_stock_price)
 #for i in range(0,len(predicted_stock_price)):
 #    predicted_stock_price[i] = predicted_stock_price[i] + trainset[806+i][0]
     
-real_stock_price = trainset.copy()[806:,0:1]
+real_stock_price = trainset.copy()[866:,0:1]
 
 
 profit=0
 buy_sell=0 # 1=buy, 0=nije otvorena pozicija, -1=sell
 starting_position=real_stock_price[0]
-spread=0.35
-
-for i in range(199):
+#spread=0.35
+spread = 0.002 * starting_position
+for i in range(139):
         current_price=real_stock_price[i]
         if (buy_sell==0):
                 starting_position=current_price
@@ -131,10 +131,10 @@ for i in range(199):
                         print("closing position")
                         profit+=starting_position-current_price
                         buy_sell=0
-#if (buy_sell==1):
-#    profit+=current_price-starting_position
-#if (buy_sell==-1):   
-#    profit+=starting_position-current_price
+if (buy_sell==1):
+    profit+=current_price-starting_position
+if (buy_sell==-1):   
+    profit+=starting_position-current_price
 
 print("profit from our prediction is: " +str(profit/starting_position),"%")
 
